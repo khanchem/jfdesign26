@@ -1,0 +1,95 @@
+<style>
+    .salary-range {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .salary-range input {
+        width: 100%;
+        margin: 0 10px;
+        height: 8px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #ddd;
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s;
+    }
+
+    .salary-range input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #8EBF24;
+        cursor: pointer;
+    }
+
+    .salary-range input::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #8EBF24;
+        cursor: pointer;
+    }
+
+    .salary-values {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .salary-values span {
+        font-weight: small;
+        color: #8EBF24;
+    }
+
+    .selected-salary {
+        text-align: center;
+        font-size: 0.2em;
+        color: #333;
+    }
+</style>
+
+<h3>Filter Jobs</h3>
+<div class="salary-range">
+    <label for="salary-range">Salary Range:</label><br><br>
+    <input type="range" id="salary-range" name="salary-range" min="0" max="250000" step="1000" value="80000">
+</div>
+
+<div class="salary-values">
+    <span>$0</span>
+    <span>$250,000</span>
+</div>
+
+
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    jQuery(document).ready(function($) {
+        // Update the selected salary dynamically and send it via AJAX
+        $('#salary-range').on('input', function() {
+            var selectedValue = $(this).val(); // Get the selected value
+            $('#selected-salary').text('$' + selectedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',')); // Update the displayed salary
+
+            // Send the selected salary range to rang.php via AJAX
+            $.ajax({
+                url: 'https://api.techieparrot.com/jfdesign26/search.php', // Your PHP file to handle the request
+                method: 'GET',    // Use GET method to send data
+                data: { salary: selectedValue }, // Send the salary as data
+                success: function(response) {
+                    $('#job-container').html(response)
+                },
+                error: function(xhr, status, error) {
+                    // Handle any errors here
+                    console.error('AJAX error:', error);
+                }
+            });
+        });
+    });
+</script>

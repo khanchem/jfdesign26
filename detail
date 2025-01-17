@@ -1,0 +1,25 @@
+<script>
+jQuery(document).ready(function($) {
+    // Get the URL parameter "id"
+    var urlParams = new URLSearchParams(window.location.search);
+    var jobId = urlParams.get('id'); // Get the value of the 'id' parameter
+    if (jobId) {
+ 
+        $.ajax({
+            url: 'https://api.techieparrot.com/jfdesign26/details.php', // Path to details.php
+            type: 'GET', // Use GET method
+            data: { id: jobId }, // Send jobId as a query parameter
+            success: function(response) {
+                $('.job-title-1').text(response.title);
+                $('#job-details-1').html(response.html);
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error('AJAX error:', error);
+            }
+        });
+    } else {
+        console.log('No job ID found in the URL');
+    }
+});
+</script>

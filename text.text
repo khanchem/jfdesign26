@@ -1,0 +1,13 @@
+https://infra-rec.com/vincere-callback/?code=c4585344-d257-48d8-9884-f4168ef84826&state=STATE
+
+curl -X GET "https://testprod.vincere.io/api/v2/position/search/fl%3Did%2Cjob_title%2Cpublic_description%2Cindustry%2Ccompany%2Cmonthly_pay_rate%2Clocation%3Bmlt.fl%3Dkeywords%2Cjob_title%3Bsort%3Did%20desc%2Ccreated_date%20asc" \
+ -H "accept: application/json" \
+
+\curl -X GET "https://testprod.vincere.io/api/v2/position/search/fl%3Did%2Cjob_title%2Cpublic_description%2Cdescription%2Cindustry%2Ccompany%2Cmonthly_pay_rate%2Clocation%3Bmlt.fl%3Dkeywords%2Cjob_title%3Bsort%3Did%20desc%2Ccreated_date%20asc" \
+ -H "accept: application/json" \
+
+ curl -X GET "https://testprod.vincere.io/api/v2/position/search/fl%3Did%2Cjob_title%2Cdescription%2Cindustry%2Ccompany%2Cmonthly_pay_rate%2Clocation%3Bmlt.fl%3Dkeywords%2Cjob_title%3Bsort%3Did%20desc%2Ccreated_date%20asc" \
+ -H "accept: application/json" \
+
+curl -X GET "https://testprod.vincere.io/api/v2/position/search/fl%3Did%2Cjob_title%2Cdescription%2Cindustry%2Cformatted_salary_to%2Ccompany%2Cmonthly_pay_rate%2Clocation%3Bmlt.fl%3Dkeywords%2Cjob_title%3Bsort%3Did%20desc%2Ccreated_date%20asc?start=1&limit=100" \
+ -H "accept: application/json" 

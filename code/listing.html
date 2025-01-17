@@ -1,0 +1,24 @@
+<div id="job-container"></div>
+
+
+<script>
+
+jQuery(document).ready(function ($) {
+    function fetchJobCards() {
+        $.ajax({
+            url: 'https://api.techieparrot.com/jfdesign26/listjob.php', // Update this URL based on your setup
+            type: 'GET',
+            success: function (data) {
+                $('#job-container').html(data); // Display cards in the container
+            },
+            error: function (error) {
+                console.error('Error fetching job cards:', error);
+            },
+        });
+    }
+
+    // Fetch job cards on page load
+    fetchJobCards();
+});
+
+</script>
