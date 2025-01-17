@@ -1,10 +1,6 @@
 <?php
 
 // Configuration
-$clientId = '08f8124d-c77e-4b70-b531-3c7670cdbe91'; // Your Client ID
-$apiKey = 'f1ef9004-ebb1-42e2-9115-bf2d6f3fc793'; // Your API Key
-$callbackUrl = 'https://infra-rec.com/vincere-callback/'; // Your Redirect URL
-$domain = 'infra-rec'; // Your Tenant ID without the .vincere.io
 
 // Step 1: Generate Authorization Code
 function getAuthorizationCode($clientId, $callbackUrl) {

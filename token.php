@@ -1,8 +1,8 @@
 <?php
-$clientId = '08f8124d-c77e-4b70-b531-3c7670cdbe91'; // Your Client ID
-$apiKey = 'f1ef9004-ebb1-42e2-9115-bf2d6f3fc793'; // Your API Key
-$callbackUrl = 'https://infra-rec.com/vincere-callback/'; // Your Redirect URL
-$domain = 'infra-rec'; // Your Tenant ID without the .vincere.io
+$clientId = ''; // Your Client ID
+$apiKey = ''; // Your API Key
+$callbackUrl = ''; // Your Redirect URL
+$domain = ''; // Your Tenant ID without the .vincere.io
 $code = 'c4585344-d257-48d8-9884-f4168ef84826';
  $url = 'https://id.vincere.io/oauth2/token';
  $data = [
